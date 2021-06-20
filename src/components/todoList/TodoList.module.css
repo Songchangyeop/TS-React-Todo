@@ -1,0 +1,15 @@
+.todo {
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: azure;
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete {
+  background-color: transparent;
+  border: 0;
+  font-weight: bold;
+  cursor: pointer;
+}

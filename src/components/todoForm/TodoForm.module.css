@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+}
+
+.input {
+  width: 70%;
+  height: 5em;
+  margin-right: 1em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  outline: none;
+  box-sizing: border-box;
+  padding: 1em;
+}
+
+.button {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  font-size: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  outline: none;
+  background-color: #b2fab4;
+}
