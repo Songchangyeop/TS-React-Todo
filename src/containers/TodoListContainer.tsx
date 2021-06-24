@@ -6,12 +6,12 @@ interface TodoListContainerProps {
     text: string;
     done: boolean;
   };
-  onDelete: (todo: object) => void;
+  onRemove: (todo: number) => void;
 }
 
-function TodoListContainer({ todo, onDelete }: TodoListContainerProps) {
+function TodoListContainer({ todo, onRemove }: TodoListContainerProps) {
   const handleDelete = () => {
-    onDelete(todo);
+    onRemove(todo.id);
   };
   return <TodoList todo={todo} handleDelete={handleDelete} />;
 }

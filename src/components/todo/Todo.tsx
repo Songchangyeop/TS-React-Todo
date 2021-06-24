@@ -11,11 +11,11 @@ interface TodoItem {
 
 interface TodoProps {
   onSubmit: (form: string) => void;
-  onDelete: (todo: object) => void;
+  onRemove: (todo: number) => void;
   todos: TodoItem[];
 }
 
-function Todo({ onSubmit, onDelete, todos }: TodoProps) {
+function Todo({ onSubmit, onRemove, todos }: TodoProps) {
   return (
     <div className={styles.Todo}>
       <header className={styles.header}>
@@ -26,7 +26,7 @@ function Todo({ onSubmit, onDelete, todos }: TodoProps) {
       </section>
       <section className={styles.list}>
         {todos.map((todo) => (
-          <TodoListContainer todo={todo} key={todo.id} onDelete={onDelete} />
+          <TodoListContainer todo={todo} key={todo.id} onRemove={onRemove} />
         ))}
       </section>
     </div>
