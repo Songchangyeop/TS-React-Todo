@@ -6,17 +6,28 @@ interface TodoListProps {
     text: string;
     done: boolean;
   };
-  handleDelete: (todo: object) => void;
+  handleDelete: (todo: any) => void;
+  handleToggle: (todo: any) => void;
 }
 
-function TodoList({ todo, handleDelete }: TodoListProps) {
+function TodoList({ todo, handleDelete, handleToggle }: TodoListProps) {
   return (
-    <div className={styles.todo}>
-      <span>{todo.text}</span>
-      <button className={styles.delete} type="button" onClick={handleDelete}>
-        X
-      </button>
-    </div>
+    <li className={styles.todo}>
+      <span style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>
+        {todo.text}
+      </span>
+      <div>
+        <input
+          type="checkbox"
+          checked={todo.done}
+          readOnly={true}
+          onClick={handleToggle}
+        />
+        <button className={styles.delete} type="button" onClick={handleDelete}>
+          🗑
+        </button>
+      </div>
+    </li>
   );
 }
 

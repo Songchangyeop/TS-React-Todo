@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import TodoForm from '../components/todoForm/TodoForm';
 import { useState } from 'react';
-interface FormContainerProps {
-  onSubmit: (form: string) => void;
-}
+import { submit } from '../modules/todo';
+import { useDispatch } from 'react-redux';
 
-function TodoFormContainer({ onSubmit }: FormContainerProps) {
+function TodoFormContainer() {
   const [form, setForm] = useState('');
+  const [id, setId] = useState(1);
+
+  const dispatch = useDispatch();
+
+  const onSubmit = useCallback(
+    (text) => {
+      dispatch(submit({ id: id, text: text, done: false }));
+      setId(id + 1);
+    },
+    [dispatch, id]
+  );
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

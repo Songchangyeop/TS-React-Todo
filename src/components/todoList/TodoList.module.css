@@ -10,6 +10,7 @@
 .delete {
   background-color: transparent;
   border: 0;
+  font-size: 1.2em;
   font-weight: bold;
   cursor: pointer;
 }

@@ -10,25 +10,23 @@ interface TodoItem {
 }
 
 interface TodoProps {
-  onSubmit: (form: string) => void;
-  onRemove: (todo: number) => void;
   todos: TodoItem[];
 }
 
-function Todo({ onSubmit, onRemove, todos }: TodoProps) {
+function Todo({ todos }: TodoProps) {
   return (
     <div className={styles.Todo}>
       <header className={styles.header}>
         <TodoHeader />
       </header>
       <section className={styles.form}>
-        <TodoFormContainer onSubmit={onSubmit} />
+        <TodoFormContainer />
       </section>
-      <section className={styles.list}>
+      <ul className={styles.list}>
         {todos.map((todo) => (
-          <TodoListContainer todo={todo} key={todo.id} onRemove={onRemove} />
+          <TodoListContainer todo={todo} key={todo.id} />
         ))}
-      </section>
+      </ul>
     </div>
   );
 }

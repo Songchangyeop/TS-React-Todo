@@ -19,3 +19,7 @@
   height: 18em;
   overflow-y: auto;
 }
+
+ul {
+  padding: 0;
+}
