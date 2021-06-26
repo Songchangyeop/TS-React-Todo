@@ -35,7 +35,11 @@
 }
 
 .button:hover {
-  background-color: #97b498;
+  background-color: #75a478;
+}
+
+.btnClicked {
+  background-color: #75a478;
 }
 
 ul {

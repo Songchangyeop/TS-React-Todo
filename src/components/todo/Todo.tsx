@@ -3,7 +3,6 @@ import TodoHeader from '../todoHeader/TodoHeader';
 import styles from './Todo.module.css';
 import TodoFormContainer from '../../containers/TodoFormContainer';
 import TodoListContainer from '../../containers/TodoListContainer';
-import { useState } from 'react';
 interface TodoItem {
   id: number;
   text: string;
@@ -12,16 +11,19 @@ interface TodoItem {
 
 interface TodoProps {
   todos: TodoItem[];
+  handleSelected: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  selected: string;
+  doingTodo: TodoItem[];
+  completedTodo: TodoItem[];
 }
 
-function Todo({ todos }: TodoProps) {
-  const [selected, setSelected] = useState('Doing');
-  const handleSelected = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setSelected(e.currentTarget.value);
-  };
-
-  let doingTodo = todos.filter((todo) => todo.done === false);
-  let completedTodo = todos.filter((todo) => todo.done === true);
+function Todo({
+  todos,
+  handleSelected,
+  selected,
+  doingTodo,
+  completedTodo,
+}: TodoProps) {
   return (
     <div className={styles.Todo}>
       <header className={styles.header}>
@@ -32,21 +34,27 @@ function Todo({ todos }: TodoProps) {
       </section>
       <div className={styles.buttons}>
         <button
-          className={styles.button}
+          className={`${styles.button} ${
+            selected === 'Doing' && styles.btnClicked
+          }`}
           value="Doing"
           onClick={handleSelected}
         >
           Doing
         </button>
         <button
-          className={styles.button}
+          className={`${styles.button} ${
+            selected === 'Completed' && styles.btnClicked
+          }`}
           value="Completed"
           onClick={handleSelected}
         >
           Completed
         </button>
         <button
-          className={styles.button}
+          className={`${styles.button} ${
+            selected === 'ViewAll' && styles.btnClicked
+          }`}
           value="ViewAll"
           onClick={handleSelected}
         >
