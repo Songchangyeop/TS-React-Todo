@@ -7,5 +7,5 @@
 <br>
 
 ```
-사용 된 기술 : React, Typescript, typesafe-actions, Redux, Redux Hook, typesafe-actions, CSS-Module
+사용 된 기술 : React, Typescript, Redux, Redux Hook, typesafe-actions, CSS-Module
 ```
