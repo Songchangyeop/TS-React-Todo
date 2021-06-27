@@ -18,8 +18,8 @@ export const submit = createAction(SUBMIT)<TodoItemDataParams>();
 export const remove = createAction(REMOVE)<number>();
 export const toggle = createAction(TOGGLE)<number>();
 
-const Actions = { submit, remove, toggle };
-type TodoActions = ActionType<typeof Actions>;
+const actions = { submit, remove, toggle };
+type TodoActions = ActionType<typeof actions>;
 
 const initialState: ToDosState = {
   todoItems: [],

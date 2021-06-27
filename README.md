@@ -9,3 +9,7 @@
 ```
 사용 된 기술 : React, Typescript, typesafe-actions, Redux, Redux Hook, typesafe-actions, CSS-Module
 ```
+
+<br>
+
+<p align="center"><img src="img/todo.gif" width="350"></p>
